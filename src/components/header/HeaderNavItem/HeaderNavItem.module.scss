@@ -1,0 +1,9 @@
+@use '/src/styles/variables' as vars;
+
+.root {
+    font-weight: 500;
+
+    &:hover {
+        color: vars.$green-dark;
+    }
+}

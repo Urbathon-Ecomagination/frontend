@@ -1,0 +1,33 @@
+@use '/src/styles/variables' as vars;
+@use '/src/styles/utils' as utils;
+
+.title {
+    line-height: 1.1;
+}
+
+.section {
+    &:not(:last-child) {
+        margin-bottom: 48px;
+    }
+}
+
+.subheading {
+    font-size: utils.to-rem(36px);
+    font-weight: vars.$font-semibold;
+    margin-bottom: 24px;
+}
+
+.news {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px 16px;
+
+    @media (max-width: vars.$breakpoint-medium) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: vars.$breakpoint-small) {
+        display: flex;
+        flex-direction: column;
+    }
+}

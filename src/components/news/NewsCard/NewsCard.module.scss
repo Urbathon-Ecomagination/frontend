@@ -1,0 +1,18 @@
+@use '/src/styles/variables' as vars;
+@use '/src/styles/utils' as utils;
+
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.title {
+    margin-bottom: 8px;
+    font-weight: vars.$font-semibold;
+}
+
+.description {
+    flex-grow: 1;
+    margin-bottom: 16px;
+}

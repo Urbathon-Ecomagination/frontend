@@ -1,0 +1,29 @@
+@use '/src/styles/variables' as vars;
+
+.button {
+    padding: 10px 24px;
+    border-radius: 8px;
+    color: vars.$white;
+
+    &.isFilled {
+        background-color: vars.$green;
+
+        &.isAccent {
+            background-color: vars.$green-dark;
+        }
+    }
+
+    &.isOutline {
+        color: vars.$green;
+        border: solid 2px vars.$green;
+
+        &.isAccent {
+            color: vars.$green-dark;
+            border: solid 2px vars.$green-dark;
+        }
+    }
+
+    &.isFullWidth {
+        width: 100%;
+    }
+}

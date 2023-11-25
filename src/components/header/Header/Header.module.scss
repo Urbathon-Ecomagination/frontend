@@ -1,0 +1,38 @@
+@use '/src/styles/variables' as vars;
+
+.root {
+    display: flex;
+    align-items: center;
+    height: 62px;
+    max-width: 100%;
+    padding: 10px 36px;
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    min-width: 90px;
+    margin-right: 60px;
+
+    @media (max-width: vars.$breakpoint-medium) {
+        margin-right: 40px;
+    }
+}
+
+.list {
+    display: flex;
+    gap: 36px;
+    flex-grow: 1;
+    margin-right: 60px;
+}
+
+.item {
+    &.isActive {
+        color: vars.$green-dark;
+    }
+}
+
+.buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+}

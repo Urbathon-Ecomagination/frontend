@@ -1,0 +1,15 @@
+@use '/src/styles/variables' as vars;
+@use '/src/styles/utils' as utils;
+
+.title {
+    margin-bottom: 24px;
+}
+
+.news {
+}
+
+.newsItem {
+    &:not(:last-child) {
+        margin-bottom: 24px;
+    }
+}

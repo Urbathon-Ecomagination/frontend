@@ -1,0 +1,33 @@
+{
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "arrowParens": "always",
+    "tabWidth": 4,
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true,
+    "importOrderGroupNamespaceSpecifiers": true,
+    "importOrderCaseInsensitive": true,
+    "importOrder": [
+        "^react$",
+        "effector",
+        "(monocle-ts|fp-ts)",
+        "<THIRD_PARTY_MODULES>",
+        "^@domains/(.*)$",
+        "^@stores/(.*)$",
+        "^@api/(.*)$",
+        "^@utils/(.*)$",
+        "^@hooks/(.*)$",
+        "^@providers/(.*)$",
+        "^@views/(.*)$",
+        "^@layouts/(.*)$",
+        "^@pages/(.*)$",
+        "^@components/(.*)$",
+        "^\\.\\/.+(?<!s?css)$",
+        "^@styles/(.*)$",
+        "^\\./.+\\.s?css$",
+        "^@assets/(.*)$",
+        "^[./]",
+        "^@mock/(.*)$"
+    ]
+}

@@ -1,0 +1,9 @@
+@use 'sass:math' as math;
+
+@function to-rem($size) {
+    @return math.div($size, 16px) * 1rem;
+}
+
+@mixin set-transition($property: all, $time: 0.25s) {
+    transition: $property $time ease-in;
+}

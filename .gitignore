@@ -1,0 +1,19 @@
+# compiled output
+/.next
+/node_modules
+
+# Logs
+logs
+*.log
+npm-debug.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+
+# IDEs and editors
+/.idea
+.settings/
+
+# Environment
+.env

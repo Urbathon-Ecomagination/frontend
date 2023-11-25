@@ -1,0 +1,57 @@
+{
+    "plugins": [
+        "stylelint-scss",
+        "stylelint-order",
+        "stylelint-prettier"
+    ],
+    "customSyntax": "postcss-scss",
+    "rules": {
+        "prettier/prettier": true,
+        "font-family-no-duplicate-names": true,
+        "selector-max-id": 0,
+        "comment-empty-line-before": [
+            "always",
+            {
+                "except": [
+                    "first-nested"
+                ]
+            }
+        ],
+        "rule-empty-line-before": [
+            "always",
+            {
+                "except": [
+                    "after-single-line-comment",
+                    "first-nested"
+                ]
+            }
+        ],
+        "order/order": [
+            {
+                "type": "at-rule"
+            },
+            "declarations",
+            {
+                "type": "at-rule",
+                "hasBlock": true
+            },
+            "rules"
+        ],
+        "max-nesting-depth": null,
+        "scss/at-use-no-unnamespaced": true,
+        "scss/dollar-variable-pattern": "^_?[a-z]+[\\w-]*$",
+        "scss/no-duplicate-dollar-variables": [
+            true,
+            {
+                "ignoreInside": ["at-rule", "nested-at-rule"],
+                "ignoreInsideAtRules": ["include"]
+            }
+        ],
+        "scss/no-duplicate-mixins": true,
+        "scss/operator-no-unspaced": true,
+        "declaration-empty-line-before": ["always", {
+            "except": ["after-comment", "after-declaration", "first-nested"]
+        }],
+        "length-zero-no-unit": true
+    }
+}

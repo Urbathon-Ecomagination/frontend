@@ -1,0 +1,16 @@
+@use '/src/styles/variables' as vars;
+
+.root {
+    padding: 0 40px;
+    max-width: vars.$breakpoint-xlarge;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    @media (max-width: vars.$breakpoint-medium) {
+        padding: 0 24px;
+    }
+
+    @media (max-width: vars.$breakpoint-small) {
+        padding: 0 16px;
+    }
+}

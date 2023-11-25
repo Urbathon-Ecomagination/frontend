@@ -1,0 +1,25 @@
+@use '/src/styles/variables' as vars;
+
+.root {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+.header {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.footer {
+    flex-shrink: 0;
+}
+
+.body {
+    flex-grow: 1;
+    padding-top: 64px;
+
+    @media (max-width: vars.$breakpoint-medium) {
+        padding-top: 32px;
+    }
+}

@@ -1,0 +1,62 @@
+@use '/src/styles/variables' as vars;
+@use '/src/styles/utils' as utils;
+
+.root {
+    display: grid;
+    padding: 4px 0 64px;
+    column-gap: 100px;
+    grid-template-columns: min-content minmax(400px, 1fr);
+
+    @media (max-width: vars.$breakpoint-large) {
+        column-gap: 80px;
+    }
+
+    @media (max-width: vars.$breakpoint-medium) {
+        display: flex;
+        flex-direction: column;
+        row-gap: 32px;
+        padding: 0;
+        margin-bottom: 48px;
+    }
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+    font-size: utils.to-rem(48px);
+    text-transform: uppercase;
+    line-height: 1.2;
+    padding-bottom: 16px;
+    border-bottom: solid 1px vars.$gray;
+
+    @media (max-width: vars.$breakpoint-large) {
+        font-size: utils.to-rem(40px);
+    }
+
+    @media (max-width: vars.$breakpoint-medium) {
+        max-width: 300px;
+    }
+}
+
+.description {
+    margin-top: 32px;
+}
+
+.picture {
+    height: 650px;
+    border-radius: 255px;
+    background: url('/images/city.png') center no-repeat;
+    background-size: cover;
+
+    @media (max-width: vars.$breakpoint-large) {
+        height: 500px;
+    }
+
+    @media (max-width: vars.$breakpoint-medium) {
+        border-radius: 48px;
+    }
+}
