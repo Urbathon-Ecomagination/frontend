@@ -7,20 +7,19 @@ import { Footer } from '@components/footer/Footer/Footer';
 import { LoginDialog } from '@components/common/LoginDialog/LoginDialog';
 import { SignUpDialog } from '@components/common/SignUpDialog/SignUpDialog';
 import { NotLoggedInDialog } from '@components/common/NotLoggedInDialog/NotLoggedInDialog';
-import { FeedbackDialog } from '@components/common/FeedbackDialog/FeedbackDialog';
+import { AppealDialog } from '@components/common/AppealDialog/AppealDialog';
 
 const CommonComponents: FC = () => {
     const [isInitialized, setInitialized] = useState(false);
 
     useEffect(() => setInitialized(true), []);
 
-    /* Common components shared between projects should be placed below (modals, forms, etc..) */
     return isInitialized ? (
         <>
             <LoginDialog />
             <SignUpDialog />
             <NotLoggedInDialog />
-            <FeedbackDialog />
+            <AppealDialog />
         </>
     ) : null;
 };
@@ -31,14 +30,9 @@ type DefaultLayoutProps = {
 };
 
 export const DefaultLayout: FC<PropsWithChildren<DefaultLayoutProps>> = (props) => {
-    const { children, title, description } = props;
+    const { children } = props;
     return (
         <>
-            {/*<Head>*/}
-            {/*    <title>{title}</title>*/}
-            {/*    <meta name="description" content={description} />*/}
-            {/*</Head>*/}
-
             <div className={styles.root}>
                 <header className={styles.header}>{<Header />}</header>
 

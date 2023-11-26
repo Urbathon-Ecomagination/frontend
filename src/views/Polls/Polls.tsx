@@ -7,9 +7,7 @@ import { $isLoggedIn } from '@stores/user';
 import { useRouter } from 'next/router';
 import { NextPage } from 'next';
 
-type PollsProps = void;
-
-export const Polls: NextPage<PollsProps> = (props) => {
+export const Polls: NextPage = () => {
     const isLoggedIn = useUnit($isLoggedIn);
     const router = useRouter();
 

@@ -8,25 +8,16 @@ import clsx from 'clsx';
 import logo from '@assets/images/logo-large.png';
 import Image from 'next/image';
 import Link from 'next/link';
-import { $dialogs, setIsOpenLogin, setIsOpenNotLoggedIn, setIsOpenSignUp } from '@stores/dialogs';
+import { setIsOpenLogin, setIsOpenSignUp } from '@stores/dialogs';
 import { useUnit } from 'effector-react';
 import { $isLoggedIn, setUser } from '@stores/user';
 
 export const Header: FC = () => {
     const router = useRouter();
-    const [
-        { isOpenLogin, isOpenSignUp },
-        setIsOpenLoginFn,
-        setIsOpenSignUpFn,
-        isLoggedIn,
-        setIsOpenNotLoggedInFn,
-        setUserFn,
-    ] = useUnit([
-        $dialogs,
+    const [setIsOpenLoginFn, setIsOpenSignUpFn, isLoggedIn, setUserFn] = useUnit([
         setIsOpenLogin,
         setIsOpenSignUp,
         $isLoggedIn,
-        setIsOpenNotLoggedIn,
         setUser,
     ]);
 

@@ -1,1 +1,4 @@
-export type Poll = {};
+export type Poll = {
+    id: number;
+    name: string;
+};

@@ -15,7 +15,7 @@ export const LoginForm: FC = () => {
         <form className={styles.root}>
             <div className={styles.inputs}>
                 <label>Номер телефона</label>
-                <Input />
+                <Input placeholder="+79991234567" />
                 <label>Пароль</label>
                 <Input />
             </div>

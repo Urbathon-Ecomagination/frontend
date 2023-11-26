@@ -1,12 +1,6 @@
-import { NewsCard, NewsDetail } from '@domains/news';
+import { Category, NewsCard, NewsDetail } from '@domains/news';
 import { fakerRU as faker } from '@faker-js/faker';
 import { User } from '@domains/user';
-
-const mockNewsCard = (): NewsCard => ({
-    id: faker.number.int(),
-    title: faker.lorem.words({ min: 2, max: 5 }),
-    text: faker.lorem.paragraphs(2),
-});
 
 export const MOCK_NEWS_CARDS: NewsCard[] = [
     {
@@ -66,7 +60,7 @@ const mockNewsDetail = (): NewsDetail => ({
 
 export const MOCK_NEWS_DETAILS: NewsDetail[] = MOCK_NEWS_CARDS.map((item) => ({
     ...item,
-    picture: '',
+    picture: faker.image.urlLoremFlickr({ category: 'technics' }),
     author: {} as User,
     category: {
         id: faker.number.int(),
@@ -75,3 +69,18 @@ export const MOCK_NEWS_DETAILS: NewsDetail[] = MOCK_NEWS_CARDS.map((item) => ({
     date: new Date().toDateString(),
 }));
 MOCK_NEWS_DETAILS.push(...Array.from({ length: 10 }).map(() => mockNewsDetail()));
+
+export const MOCK_CATEGORIES: Category[] = [
+    {
+        id: faker.number.int(),
+        name: 'Свет',
+    },
+    {
+        id: faker.number.int(),
+        name: 'Вода',
+    },
+    {
+        id: faker.number.int(),
+        name: 'Газ',
+    },
+];

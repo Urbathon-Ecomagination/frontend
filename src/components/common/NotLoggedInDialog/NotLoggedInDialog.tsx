@@ -4,7 +4,7 @@ import { Dialog } from '@components/common/Dialog/Dialog';
 import { $dialogs, setIsOpenNotLoggedIn } from '@stores/dialogs';
 import { useUnit } from 'effector-react';
 
-export const NotLoggedInDialog: FC = (props) => {
+export const NotLoggedInDialog: FC = () => {
     const [{ isOpenNotLoggedIn }, setIsOpenNotLoggedInFn] = useUnit([
         $dialogs,
         setIsOpenNotLoggedIn,

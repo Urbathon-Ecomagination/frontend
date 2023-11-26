@@ -1,6 +1,6 @@
 export enum NavTabs {
     'News' = 'news',
-    'Requests' = 'feedback',
+    'Requests' = 'appeal',
     'Map' = 'map',
     'Polls' = 'polls',
 }

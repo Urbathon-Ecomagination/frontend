@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import styles from './Feedback.module.scss';
+import styles from './Appeal.module.scss';
 import { Container } from '@components/common/Container/Container';
 import { DefaultLayout } from '@layouts/DefaultLayout/DefaultLayout';
 import { useRouter } from 'next/router';
@@ -7,19 +7,14 @@ import { useUnit } from 'effector-react';
 import { $isLoggedIn } from '@stores/user';
 import { NextPage } from 'next';
 import Button from '@components/common/Button/Button';
-import { setIsOpenFeedback } from '@stores/dialogs';
+import { setIsOpenAppeal } from '@stores/dialogs';
 
-type FeedbackProps = {
-    feedback: [];
-};
-
-export const Feedback: NextPage<FeedbackProps> = (props) => {
-    const { feedback } = props;
-    const [isLoggedIn, setIsOpenFeedbackFn] = useUnit([$isLoggedIn, setIsOpenFeedback]);
+export const Appeal: NextPage = () => {
+    const [isLoggedIn, setIsOpenAppealFn] = useUnit([$isLoggedIn, setIsOpenAppeal]);
     const router = useRouter();
 
     const handleClick = () => {
-        setIsOpenFeedbackFn(true);
+        setIsOpenAppealFn(true);
     };
 
     useEffect(() => {

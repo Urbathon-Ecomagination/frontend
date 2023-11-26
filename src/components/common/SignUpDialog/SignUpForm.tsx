@@ -17,7 +17,7 @@ export const SignUpForm: FC = () => {
                 <label>Имя</label>
                 <Input />
                 <label>Номер телефона</label>
-                <Input />
+                <Input placeholder="+79991234567" />
                 <label>Пароль</label>
                 <Input />
             </div>
