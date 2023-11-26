@@ -8,7 +8,7 @@ import {
     Polygon,
 } from '@pbe/react-yandex-maps';
 import { defaultMapControls, defaultMapModules } from '@lib/constants';
-import ekb from '@mock/ekb3.json';
+import ekb from '@mock/ekb.json';
 import clsx from 'clsx';
 
 type MapProps = {
