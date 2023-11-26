@@ -7,5 +7,6 @@ export enum NavTabs {
 
 export type HeaderTab = {
     name: string;
-    link: `/${NavTabs}`;
+    link: string;
+    needAuth: boolean;
 };

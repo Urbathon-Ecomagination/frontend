@@ -9,7 +9,7 @@ export const HomeLanding: FC = () => {
                     Навигатор
                     <br /> чистоты
                 </h1>
-                <p className={styles.description}>бла бла</p>
+                <p className={styles.description}>Информационный портал для населения</p>
             </div>
             <div className={styles.picture}></div>
         </div>

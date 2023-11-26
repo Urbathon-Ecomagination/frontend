@@ -1,0 +1,44 @@
+@use '/src/styles/variables' as vars;
+@use '/src/styles/utils' as utils;
+
+.overlay {
+    @include utils.set-transition((background-color, visibility));
+
+    display: grid;
+    position: fixed;
+    place-items: center;
+    visibility: hidden;
+    z-index: 1000;
+    inset: 0;
+    background-color: transparent;
+    padding: 10vh 0;
+    overflow-y: auto;
+
+    &.isOpen {
+        visibility: visible;
+        background-color: rgba(vars.$black, 0.5);
+
+        .content {
+            transform: none;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+.content {
+    @include utils.set-transition((opacity, visibility, transform));
+
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    transform: translateY(64px) scale(0.95);
+    visibility: hidden;
+    opacity: 0;
+    margin: 8px;
+    box-shadow: 0 12px 24px -8px rgba(16, 16, 24, 0.4);
+    border-radius: 8px;
+    background-color: vars.$white;
+    padding: 40px;
+    max-width: 400px;
+}

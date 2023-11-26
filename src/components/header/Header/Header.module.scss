@@ -3,10 +3,14 @@
 .root {
     display: flex;
     align-items: center;
-    height: 62px;
     max-width: 100%;
     padding: 10px 36px;
+    background: vars.$white;
     box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.05);
+
+    @media (min-width: vars.$breakpoint-medium + 1) {
+        height: 62px;
+    }
 }
 
 .logo {
@@ -23,6 +27,16 @@
     gap: 36px;
     flex-grow: 1;
     margin-right: 60px;
+
+    @media (max-width: vars.$breakpoint-large) {
+        gap: 30px;
+        margin-right: 50px;
+    }
+
+    @media (max-width: vars.$breakpoint-medium) {
+        flex-direction: column;
+        gap: 8px;
+    }
 }
 
 .item {
@@ -35,4 +49,5 @@
     display: flex;
     gap: 16px;
     justify-content: flex-end;
+    flex-wrap: wrap;
 }

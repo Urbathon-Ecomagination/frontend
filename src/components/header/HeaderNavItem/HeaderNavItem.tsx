@@ -9,6 +9,7 @@ type HeaderNavItemProps = {
 
 export const HeaderNavItem: FC<PropsWithChildren<HeaderNavItemProps>> = (props) => {
     const { nav, children } = props;
+
     return (
         <Link href={nav.link} className={styles.root}>
             {children}

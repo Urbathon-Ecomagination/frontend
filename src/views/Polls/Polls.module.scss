@@ -1,0 +1,11 @@
+@use '/src/styles/variables' as vars;
+@use '/src/styles/utils' as utils;
+
+.title {
+    margin-bottom: 24px;
+}
+
+.empty {
+    font-weight: vars.$font-semibold;
+    font-size: utils.to-rem(18px);
+}

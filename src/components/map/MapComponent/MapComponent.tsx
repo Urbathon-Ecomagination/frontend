@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import styles from './Map.module.scss';
+import styles from './MapComponent.module.scss';
 import {
     Clusterer,
     YMaps as ReactMap,
@@ -8,20 +8,20 @@ import {
     Polygon,
 } from '@pbe/react-yandex-maps';
 import { defaultMapControls, defaultMapModules } from '@lib/constants';
-import ekb from '@mock/ekb2.json';
+import ekb from '@mock/ekb3.json';
 import clsx from 'clsx';
 
 type MapProps = {
     className?: string;
 };
 
-export const Map: FC<MapProps> = ({ className }) => {
+export const MapComponent: FC<MapProps> = ({ className }) => {
     const polygons = ekb.features.filter((item) => item.geometry.type === 'Polygon');
     const placemarks = ekb.features.filter((item) => item.geometry.type === 'Point');
 
     const defaultState = {
         center: [56.838011, 60.597474],
-        zoom: 11,
+        zoom: 10,
         controls: defaultMapControls,
     };
 
@@ -42,7 +42,7 @@ export const Map: FC<MapProps> = ({ className }) => {
                         }}
                         options={{
                             fillColor: '#56DB40',
-                            fillOpacity: 0.2,
+                            fillOpacity: 0.15,
                             strokeColor: '#56DB40',
                         }}
                     />

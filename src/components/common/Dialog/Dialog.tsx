@@ -8,15 +8,22 @@ import {
     Root as RadixDialogRoot,
 } from '@radix-ui/react-dialog';
 
-type DialogProps = void;
+import styles from './Dialog.module.scss';
+import clsx from 'clsx';
+
+type DialogProps = {
+    isOpen: boolean;
+    onIsOpenChange(isOpen: boolean): void;
+    className?: string;
+};
 
 export const Dialog: FC<PropsWithChildren<DialogProps>> = (props) => {
-    const { children } = props;
+    const { isOpen, onIsOpenChange, children } = props;
     return (
-        <RadixDialogRoot>
+        <RadixDialogRoot open={isOpen} onOpenChange={onIsOpenChange}>
             <RadixDialogPortal>
-                <RadixDialogOverlay>
-                    <RadixDialogContent>
+                <RadixDialogOverlay className={clsx(styles.overlay, isOpen && styles.isOpen)}>
+                    <RadixDialogContent className={styles.content}>
                         <RadixDialogClose></RadixDialogClose>
 
                         {children}

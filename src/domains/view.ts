@@ -1,7 +1,6 @@
-import { User } from '@domains/user';
+import { NewsCard, NewsDetail } from '@domains/news';
 
-export type HomeResult = {
-    users: User[];
-};
+export type HomeResult = { news: NewsCard[] };
 
-export type HomePageProps = { data: void };
+export type HomePageProps = { data: HomeResult };
+export type NewsPageProps = { data: NewsDetail[] };

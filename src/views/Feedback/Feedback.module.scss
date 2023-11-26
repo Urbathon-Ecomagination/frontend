@@ -1,0 +1,14 @@
+@use '/src/styles/variables' as vars;
+@use '/src/styles/utils' as utils;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.empty {
+    font-weight: vars.$font-semibold;
+    font-size: utils.to-rem(18px);
+}

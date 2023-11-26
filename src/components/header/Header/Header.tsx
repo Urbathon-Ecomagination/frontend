@@ -8,9 +8,42 @@ import clsx from 'clsx';
 import logo from '@assets/images/logo-large.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import { $dialogs, setIsOpenLogin, setIsOpenNotLoggedIn, setIsOpenSignUp } from '@stores/dialogs';
+import { useUnit } from 'effector-react';
+import { $isLoggedIn, setUser } from '@stores/user';
 
 export const Header: FC = () => {
-    const route = useRouter();
+    const router = useRouter();
+    const [
+        { isOpenLogin, isOpenSignUp },
+        setIsOpenLoginFn,
+        setIsOpenSignUpFn,
+        isLoggedIn,
+        setIsOpenNotLoggedInFn,
+        setUserFn,
+    ] = useUnit([
+        $dialogs,
+        setIsOpenLogin,
+        setIsOpenSignUp,
+        $isLoggedIn,
+        setIsOpenNotLoggedIn,
+        setUser,
+    ]);
+
+    const headerItems = isLoggedIn ? HeaderTabs : HeaderTabs.filter((tab) => !tab.needAuth);
+
+    const handleLoginClick = () => {
+        setIsOpenLoginFn(true);
+    };
+
+    const handleSignUpClick = () => {
+        setIsOpenSignUpFn(true);
+        router.push('/');
+    };
+
+    const handleLogoutClick = () => {
+        setUserFn(null);
+    };
 
     return (
         <div className={styles.root}>
@@ -18,21 +51,29 @@ export const Header: FC = () => {
                 <Image src={logo.src} alt="" height="62" width="100" />
             </Link>
             <ul className={styles.list}>
-                {HeaderTabs.map((nav) => (
+                {headerItems.map((nav) => (
                     <li
                         key={nav.link}
-                        className={clsx(styles.item, route.route === nav.link && styles.isActive)}
+                        className={clsx(styles.item, router.route === nav.link && styles.isActive)}
                     >
                         <HeaderNavItem nav={nav}>{nav.name}</HeaderNavItem>
                     </li>
                 ))}
             </ul>
-            <div className={styles.buttons}>
-                <Button accent>Войти</Button>
-                <Button accent variant="outline">
-                    Регистрация
+            {isLoggedIn ? (
+                <Button variant="outline" accent onClick={handleLogoutClick}>
+                    Выйти
                 </Button>
-            </div>
+            ) : (
+                <div className={styles.buttons}>
+                    <Button accent onClick={handleLoginClick}>
+                        Войти
+                    </Button>
+                    <Button accent variant="outline" onClick={handleSignUpClick}>
+                        Регистрация
+                    </Button>
+                </div>
+            )}
         </div>
     );
 };

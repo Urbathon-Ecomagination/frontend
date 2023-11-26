@@ -31,3 +31,32 @@
         flex-direction: column;
     }
 }
+
+.interactiveMap {
+    display: grid;
+    grid-template-columns: minmax(300px, 800px) minmax(150px, 300px);
+    gap: 32px;
+
+    @media (max-width: vars.$breakpoint-medium) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.map {
+    //max-width: 600px;
+    height: 300px;
+
+    @media (max-width: vars.$breakpoint-medium) {
+        max-width: unset;
+    }
+}
+
+.mapInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+    max-width: 550px;
+}

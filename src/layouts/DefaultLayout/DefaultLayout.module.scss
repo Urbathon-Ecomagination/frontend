@@ -7,7 +7,10 @@
 }
 
 .header {
-    position: relative;
+    position: sticky;
+    top: 0;
+    left: 0;
+    //position: relative;
     flex-shrink: 0;
 }
 
@@ -20,6 +23,6 @@
     padding-top: 64px;
 
     @media (max-width: vars.$breakpoint-medium) {
-        padding-top: 32px;
+        padding-top: 48px;
     }
 }

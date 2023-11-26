@@ -1,20 +1,25 @@
 import { HeaderTab, NavTabs } from '@domains/common';
+import { makeRoute } from '@lib/utils';
 
 export const HeaderTabs: HeaderTab[] = [
     {
         name: 'Новости',
-        link: `/${NavTabs.News}`,
+        link: makeRoute(NavTabs.News),
+        needAuth: false,
     },
     {
         name: 'Обращения',
-        link: `/${NavTabs.Requests}`,
+        link: makeRoute(NavTabs.Requests),
+        needAuth: true,
     },
     {
         name: 'Опросы',
-        link: `/${NavTabs.Polls}`,
+        link: makeRoute(NavTabs.Polls),
+        needAuth: true,
     },
     {
         name: 'Карта',
-        link: `/${NavTabs.Map}`,
+        link: makeRoute(NavTabs.Map),
+        needAuth: false,
     },
 ];
